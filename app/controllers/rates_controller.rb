@@ -79,11 +79,12 @@ class RatesController < ApplicationController
   end
 
   def get_tasks_results providers, currencies, future_objects
-    results = kill_values_in_hash providers
+    # results = kill_values_in_hash providers
+    results = Hash[currencies.map{ |currency| [currency, Hash.new] }]
 
     future_objects.each do |provider, currencies|
       currencies.each do |currency, future_object|
-        results[provider][currency] = future_object.value
+        results[currency][provider] = future_object.value
       end
     end
     results

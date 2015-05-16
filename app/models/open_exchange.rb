@@ -3,18 +3,18 @@ class OpenExchange
   include Requestable
 
   def initialize
-    @base_url = "http://localhost:8080/openexchange/"
+    @base_url = "https://openexchangerates.org/api/latest.json"
     @url = @base_url
   end
 
   def get_rate src, dst #symbols here ok
-    request
+    request app_id: OPENEXCHANGE_KEY
     (@response["rates"]["#{dst.to_s.upcase}"] / @response["rates"]["#{src.to_s.upcase}"]).round(4)
   end
 
   private
 
-  def request
+  def request **params
     unless response
       super
       @response = JSON.parse @response

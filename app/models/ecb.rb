@@ -3,7 +3,7 @@ class Ecb
   include Requestable
 
   def initialize
-    @base_url = 'http://localhost:8080/ecb/'
+    @base_url = 'http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml'
     @url = @base_url
   end
 

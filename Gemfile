@@ -37,6 +37,8 @@ gem 'slim-rails'
 gem 'celluloid'
 gem 'rest-client'
 
+gem 'bootstrap-sass', '~> 3.3.4'
+
 # gem 'thin'
 # gem 'em-http-request'
 # gem 'em-synchrony'

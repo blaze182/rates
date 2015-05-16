@@ -1,2 +1,13 @@
-| hello
-p = @response
+table.table
+  thead
+    tr
+      th
+      th openexchangerates.org
+      th appspot.com
+      th ecb.int
+  tbody
+    - @response.each do |currency, rates|
+      tr
+        th = currency.to_s.upcase
+        - rates.each do |key, value|
+          td = value

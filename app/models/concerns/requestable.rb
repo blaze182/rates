@@ -7,8 +7,8 @@ module Requestable
 
   protected
 
-  def request
-    @response = RestClient.get @url unless @response
+  def request **params
+    @response = RestClient.get @url, { :params => params } unless @response
     @response
   end
 
