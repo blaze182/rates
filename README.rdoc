@@ -1,28 +1,8 @@
-== README
+== Rates
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the Rails application fetching realtime currency data from several sources.
 
-Things you may want to cover:
+http://slack-files.com/files-pub/T031ZT59M-F04SVCT8Y-1165a85840/screen_shot_2015-05-16_at_15.24.29.png
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+=== Concurrency
+All requests are running concurrently on server-side using Celluloid Actor model https://github.com/celluloid/celluloid
