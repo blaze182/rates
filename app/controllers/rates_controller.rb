@@ -2,7 +2,7 @@ class RatesController < ApplicationController
   after_action :destroy_actors
 
   def index
-    providers     = {oe: OpenExchange, ecb: Ecb, ca: CurrApi}
+    providers     = {oe: OpenExchange, ca: CurrApi, ecb: Ecb}
     base_currency = :eur
     currencies    = [:aud, :usd, :nok]
 
